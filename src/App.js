@@ -15,7 +15,7 @@ const App = () => {
       <Header/>
       <Profile/>
       <About/>
-      <Test/>
+      {/* <Test/> */}
       <Porto/>
       <Client/>
       <Sertif/>

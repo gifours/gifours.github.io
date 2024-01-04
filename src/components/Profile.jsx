@@ -20,9 +20,10 @@ const Banner = () => {
                         <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white transition-all ease-in duration-500 z-20">Taufiq Aditya Putra</span></h1>
                     <h2 class="font-medium text-secondary text-lg mb-5 mt-2 lg:text-2xl">Programmer & <span class="text-dark dark:text-white transition-all ease-in duration-500">Designer</span></h2>
                     <p class="font-medium text-secondary mb-10 leading-relaxed">Saya merupakan lulusan S1 Informatika dengan hasil kerja keras. Saya memiliki pengalaman yang solid dan keterampilan yang kuat dalam bidang UI/UX dan desain grafik. Dengan latar belakang yang beragam, saya telah berhasil menghasilkan antarmuka pengguna yang menarik dan fungsional untuk berbagai platform dan aplikasi.</p>
-                    <a href="https://drive.google.com/drive/folders/12uMVlTsNRBCivbGGUVsNKwXrh4Hk3Bc6?usp=sharing" class="text-base font-semibold text-white py-3 px-8 rounded-full bg-primary dark:bg-primary2 dark:text-dark dark:shadow-primary2/50  shadow-primary/50 shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download CV</a>
+                    <a href="https://drive.google.com/drive/folders/1M_XfxosvBDx4xMqYK0prS2Ku7xGkSZ0p?usp=drive_link" class="text-base font-semibold text-white py-3 px-8 rounded-full bg-primary dark:bg-primary2 dark:text-dark dark:shadow-primary2/50  shadow-primary/50 shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download CV</a>
                 </motion.div>
                 </div>
+                
                 <div class="w-full self-end px-4 lg:w-1/3">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
                     <motion.div initial={{ x: "7rem", opacity: 0 }}
