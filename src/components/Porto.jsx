@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import dataweb from '../data/frontend.json';
 import datauiux from '../data/uiux.json';
 import datadesain from '../data/desain.json';
