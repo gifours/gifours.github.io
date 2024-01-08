@@ -1,3 +1,11 @@
+//run code local
 // npm start
+
+// menambahkan gh-pages
 // npm run deploy
+
+// update terbaru code
+// git add --all
+// git commit -m "Initial commit"
+// git push -u origin main
 
