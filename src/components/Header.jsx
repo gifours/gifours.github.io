@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
 
@@ -99,7 +100,7 @@ const Header = () => {
                         </div>
                     </label>
                     <div class="mx-4">
-                        <a href="#home" class="font-bold text-lg text-primary dark:text-primary2 block py-6 mx-0">GIFOUR</a>
+                        <a href="" class="font-bold text-lg text-primary dark:text-primary2 block py-6 mx-0">GIFOUR</a>
                     </div>
                 </div>
                 
@@ -113,7 +114,7 @@ const Header = () => {
                     <nav id="nav-menu" ref={navMenuRef} class={`menu ${isHamburgerActive ? '' : 'hidden'} absolute py-5 bg-white shadow-lg rounded-lg max-w-[180px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-primary2/50 lg:dark:bg-transparent`}>
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="navmenu">Beranda</a>
+                                <a href="#home" class="navmenu">Profile</a>
                             </li>
                             <li class="group">
                                 <a href="#about" class="navmenu">Tentang Saya</a>
@@ -126,6 +127,9 @@ const Header = () => {
                             </li>
                             <li class="group">
                                 <a href="#sertif" class="navmenu">Sertifikat</a>
+                            </li>
+                            <li class="group">
+                                <NavLink to="/allProject" class="navmenu">AllProject</NavLink>
                             </li>
                         </ul>
                     </nav>

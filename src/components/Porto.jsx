@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import dataweb from '../data/frontend.json';
 import datauiux from '../data/uiux.json';
 import datadesain from '../data/desain.json';
 import datablender from '../data/blender.json';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-
 
 const Porto = () => {
     const [activeTab, setActiveTab] = useState("all");
@@ -24,49 +21,25 @@ const Porto = () => {
         });
     };
 
-    //animasi motion saat masuk section
-    const [ref, inView] = useInView({
-        triggerOnce: true, 
-        threshold: 0.5, 
-      });
-
-      const motionVariants = {
-        section1: { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } },
-        section2: { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } },
-        section3: { hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } },
-      };
-    
-    //   const motionVariants = {
-    //     hidden: { opacity: 0, y: 50 },
-    //     visible: { opacity: 1, y: 0 },
-    //   };
-
+    useEffect(() => {
+        handleTabClick("frontend");
+    }, []);
         
   return (
     <section id="portofolio" class="pt-36 pb-32 bg-slate-100 dark:bg-slate-800 transition-all ease-in duration-500">
         <div class="container"> 
 
             <div class="w-full px-4">
-                <div ref={ref}>
-                    <motion.div
-                        initial="hidden"
-                        animate={inView ? 'visible' : 'hidden'}
-                        variants={motionVariants[`section${1}`]}
-                        transition={{ duration: 0.5 }}
-                    >
+                <div>
                     <div class="max-w-full mx-auto text-center">
                         <h4 class="font-semibold text-lg text-primary dark:text-primary2 mb-2">Portofolio</h4>
                         <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white transition-all ease-in duration-500">Project Terbaru</h2>
                         <p class="font-medium text-md text-secondary md:text-lg">Di bawah ini merupakan portofolio projek yang pernah saya kerjakan dengan memadukan keterampilan teknis dalam pengembangan perangkat lunak dan desain.</p>
                     </div>
-                    </motion.div>
                 </div>
     
                 <div class="tabs_wrap">
                     <ul class="flex flex-wrap justify-center gap-2 pt-10">
-                        <li className={activeTab === "all" ? "btn active" : "btn"} onClick={() => handleTabClick("all")}>
-                            All
-                        </li>
                         <li className={activeTab === "frontend" ? "btn active" : "btn"} onClick={() => handleTabClick("frontend")}>
                             Frontend
                         </li>
@@ -78,6 +51,9 @@ const Porto = () => {
                         </li>
                         <li className={activeTab === "blender" ? "btn active" : "btn"} onClick={() => handleTabClick("blender")}>
                             3D Model
+                        </li>
+                        <li className={activeTab === "all" ? "btn active" : "btn"} onClick={() => handleTabClick("all")}>
+                            All
                         </li>
                     </ul>
                 </div>
@@ -149,7 +125,7 @@ const Porto = () => {
                         <div className="line"></div>
                     </div>
                 </li>
-                {datadesain.map((card, i) => (
+                {datadesain.slice(0, 4).map((card, i) => (
                     <div key={i} className="w-1/2 md:w-1/4">
                         <li class="item_wrap p-4 desain all">
                             <img src={card.imagedesain} alt="" class="w-full shadow-md hover:scale-110 ease-linear duration-500 rounded-md dark:hover:shadow-primary2 dark:hover:shadow-lg"/>

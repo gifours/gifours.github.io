@@ -1,6 +1,7 @@
 //run code local
 // npm start
 
+<<<<<<< HEAD
 // merupabah git remote add origin
 // git remote set-url origin <url github baru>
 
@@ -8,6 +9,12 @@
 // npm run deploy
 
 // update terbaru code ke github
+=======
+// menambahkan gh-pages
+// npm run deploy
+
+// update terbaru code
+>>>>>>> 6ceb3084031348401215e40e9a0658f5c001534c
 // git add --all
 // git commit -m "Initial commit"
 // git push -u origin main
