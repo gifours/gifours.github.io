@@ -91,13 +91,6 @@ const Porto = () => {
                         <div className="line"></div>
                     </div>
                 </li>
-            {/* <div ref={ref}>
-            <motion.div
-                    initial="hidden"
-                    animate={inView ? 'visible' : 'hidden'}
-                    variants={motionVariants[`section${2}`]}
-                    transition={{ duration: 0.5 }}
-                > */}
                 {dataweb.map((card, i) => (
                 <div key={i} className="md:w-1/2">
                     <li class="w-full p-4 item_wrap frontend all">
