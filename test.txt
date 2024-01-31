@@ -1,7 +1,7 @@
 //run code local
 npm start
 
-// merupabah git remote add origin
+// merubah git remote add origin baru
 git remote set-url origin <url github baru>
 
 // menambahkan gh-pages gitbub
