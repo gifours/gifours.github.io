@@ -128,9 +128,6 @@ const Header = () => {
                             <li class="group">
                                 <a href="#sertif" class="navmenu">Sertifikat</a>
                             </li>
-                            <li class="group">
-                                <NavLink to="/allProject" class="navmenu">AllProject</NavLink>
-                            </li>
                         </ul>
                     </nav>
                 </div>
