@@ -27,6 +27,12 @@
     "linkclient": "https://www.pondokhatithuluse.com",
     "imageclient": "./img/client-thuluselogo.png"
 
+  },
+
+  {
+    "linkclient": "https://bsi.uad.ac.id",
+    "imageclient": "./img/client-bsilogo.png"
+
   }
 ]
   

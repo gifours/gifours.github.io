@@ -10,6 +10,9 @@ const About = () => {
                         <h3 class="about-h3">Pengalaman</h3>
                         <ul class="font-medium text-secondary">
                             <li>
+                                <p class="inline-block text-base mb-3">Biro Sistem Informasi UAD - Student Employed <br/><span class="about-p">2024</span> (Frontend & UI/UX Design)</p>
+                            </li>
+                            <li>
                                 <p class="inline-block text-base mb-3">Tries Digital Indonesia - Internship <br/><span class="about-p">2023</span> (UI/UX Design)</p>
                             </li>
                             <li>
