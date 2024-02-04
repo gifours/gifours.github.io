@@ -29,8 +29,12 @@ const Porto = () => {
     // showmore
     const [numImagesToShow, setNumImagesToShow] = useState(4); // Initial number of images to show
     const [numImagesToShow1, setNumImagesToShow1] = useState(3); // Initial number of images to show
+    const [numImagesToShow2, setNumImagesToShow2] = useState(2); // Initial number of images to show
     const [showAds, setShowAds] = useState(false); // State to control ad visibility
     const containerRef = useRef(null); // Reference to the container for IntersectionObserver
+    const [hasButtonBeenClicked, setHasButtonBeenClicked] = useState(false);
+    const [hasButtonBeenClicked1, setHasButtonBeenClicked1] = useState(false);
+    const [hasButtonBeenClicked2, setHasButtonBeenClicked2] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -57,9 +61,15 @@ const Porto = () => {
 
     const handleShowMore = () => {
         setNumImagesToShow((prevNum) => prevNum + 4); // Increase the number of images to show
+        setHasButtonBeenClicked(true); // Set the flag to true
     };
     const handleShowMore1 = () => {
         setNumImagesToShow1((prevNum) => prevNum + 3); // Increase the number of images to show
+        setHasButtonBeenClicked1(true); // Set the flag to true
+    };
+    const handleShowMore2 = () => {
+        setNumImagesToShow2((prevNum) => prevNum + 4); // Increase the number of images to show
+        setHasButtonBeenClicked2(true); // Set the flag to true
     };
         
     return (
@@ -104,7 +114,7 @@ const Porto = () => {
                             <div className="line"></div>
                         </div>
                     </li>
-                    {dataweb.map((card, i) => (
+                    {dataweb.slice(0, numImagesToShow2).map((card, i) => (
                     <div key={i} className="md:w-1/2">
                         <li class="w-full p-4 item_wrap frontend all">
                             <div class="bg-white rounded-xl shadow-lg dark:bg-dark p-4 dark:hover:shadow-primary2 duration-500 transition-all ease-linear group">
@@ -133,8 +143,17 @@ const Porto = () => {
                         </li>
                     </div>
                     ))}
-                {/* </motion.div>
-                </div> */}
+                    <li class="w-full item_wrap mx-auto text-center frontend all">
+                        {showAds && (
+                            <div ref={containerRef} className="ad-container">
+                                {/* Place your ad component here */}
+                                <img src="your-ad-image-url" alt="Advertisement" />
+                            </div>
+                        )}
+                        {!hasButtonBeenClicked2 && (
+                            <button onClick={handleShowMore2} className="btn-custom mx-auto text-center frontend all">Show More</button>
+                        )}
+                    </li>
 
                     {/* <!-- uiux  --> */}
                     <li class="w-full item_wrap pt-12 mb-4 uiux all">
@@ -169,13 +188,17 @@ const Porto = () => {
                             </li>
                         </div>
                     ))}
-                    {showAds && (
-                        <div ref={containerRef} className="ad-container">
-                            {/* Place your ad component here */}
-                            <img src="your-ad-image-url" alt="Advertisement" />
-                        </div>
-                    )}
-                    <button onClick={handleShowMore} className="btn-custom mx-auto text-center">Show More</button>
+                    <li class="w-full item_wrap mx-auto text-center desain all">
+                        {showAds && (
+                            <div ref={containerRef} className="ad-container">
+                                {/* Place your ad component here */}
+                                <img src="your-ad-image-url" alt="Advertisement" />
+                            </div>
+                        )}
+                        {!hasButtonBeenClicked && (
+                            <button onClick={handleShowMore} className="btn-custom mx-auto text-center desain all">Show More</button>
+                        )}
+                    </li>
 
                     {/* <!-- blender  --> */}
                     <li class="w-full item_wrap pt-12 mb-4 blender all">
@@ -193,13 +216,17 @@ const Porto = () => {
                             </li>  
                         </div>
                     ))}
-                    {showAds && (
-                        <div ref={containerRef} className="ad-container">
-                            {/* Place your ad component here */}
-                            <img src="your-ad-image-url" alt="Advertisement" />
-                        </div>
-                    )}
-                    <button onClick={handleShowMore1} className="btn-custom mx-auto text-center">Show More</button>
+                    <li class="w-full item_wrap mx-auto text-center blender all">
+                        {showAds && (
+                            <div ref={containerRef} className="ad-container">
+                                {/* Place your ad component here */}
+                                <img src="your-ad-image-url" alt="Advertisement" />
+                            </div>
+                        )}
+                        {!hasButtonBeenClicked1 && (
+                            <button onClick={handleShowMore1} className="btn-custom mx-auto text-center ">Show More</button>
+                        )}
+                    </li>
                 </ul>
 
             </div>
