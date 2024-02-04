@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  .btn-custom{
+    @apply text-base font-semibold text-white py-3 px-8 rounded-full bg-primary dark:bg-primary2 dark:text-dark dark:shadow-primary2/50  shadow-primary/50 shadow-lg hover:opacity-80 transition duration-300 ease-in-out;
+  }
+  
     /* =================== start header =================== */
   /* navbar */
   .navbar-fixed {

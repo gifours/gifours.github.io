@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import dataweb from '../data/frontend.json';
 import datauiux from '../data/uiux.json';
 import datadesain from '../data/desain.json';
 import datablender from '../data/blender.json';
 
 const Porto = () => {
+    // tab filter
     const [activeTab, setActiveTab] = useState("all");
 
     const handleTabClick = (tab) => {
@@ -24,6 +25,42 @@ const Porto = () => {
     useEffect(() => {
         handleTabClick("all");
     }, []);
+
+    // showmore
+    const [numImagesToShow, setNumImagesToShow] = useState(4); // Initial number of images to show
+    const [numImagesToShow1, setNumImagesToShow1] = useState(3); // Initial number of images to show
+    const [showAds, setShowAds] = useState(false); // State to control ad visibility
+    const containerRef = useRef(null); // Reference to the container for IntersectionObserver
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // If the container is intersecting with the viewport, set showAds to true
+                    setShowAds(true);
+                    // Disconnect the observer since we don't need to observe anymore
+                    observer.disconnect();
+                }
+            });
+        });
+
+        // Start observing the container
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        // Clean up the observer when the component unmounts
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+    const handleShowMore = () => {
+        setNumImagesToShow((prevNum) => prevNum + 4); // Increase the number of images to show
+    };
+    const handleShowMore1 = () => {
+        setNumImagesToShow1((prevNum) => prevNum + 3); // Increase the number of images to show
+    };
         
     return (
         <section id="portofolio" class="pt-36 pb-32 bg-slate-100 dark:bg-slate-800 transition-all ease-in duration-500">
@@ -125,13 +162,20 @@ const Porto = () => {
                             <div className="line"></div>
                         </div>
                     </li>
-                    {datadesain.slice(0, 8).map((card, i) => (
+                    {datadesain.slice(0, numImagesToShow).map((card, i) => (
                         <div key={i} className="w-1/2 md:w-1/4">
-                            <li class="item_wrap p-4 desain all">
-                                <img src={card.imagedesain} alt="" class="w-full shadow-md hover:scale-110 ease-linear duration-500 rounded-md dark:hover:shadow-primary2 dark:hover:shadow-lg"/>
-                            </li>    
+                            <li className="item_wrap p-4 desain all">
+                                <img src={card.imagedesain} alt="" className="w-full shadow-md hover:scale-110 ease-linear duration-500 rounded-md dark:hover:shadow-primary2 dark:hover:shadow-lg" />
+                            </li>
                         </div>
                     ))}
+                    {showAds && (
+                        <div ref={containerRef} className="ad-container">
+                            {/* Place your ad component here */}
+                            <img src="your-ad-image-url" alt="Advertisement" />
+                        </div>
+                    )}
+                    <button onClick={handleShowMore} className="btn-custom mx-auto text-center">Show More</button>
 
                     {/* <!-- blender  --> */}
                     <li class="w-full item_wrap pt-12 mb-4 blender all">
@@ -140,7 +184,7 @@ const Porto = () => {
                             <div className="line"></div>
                         </div>
                     </li>
-                    {datablender.map((card, i) => (
+                    {datablender.slice(0, numImagesToShow1).map((card, i) => (
                         <div key={i} className="md:w-1/3">
                             <li class="w-full item_wrap p-4 blender all">
                                 <div class="rounded-lg shadow-md  overflow-hidden relative hover:scale-95 transition-all duration-500 dark:hover:shadow-primary2 dark:hover:shadow-lg ease-linear group">
@@ -149,6 +193,13 @@ const Porto = () => {
                             </li>  
                         </div>
                     ))}
+                    {showAds && (
+                        <div ref={containerRef} className="ad-container">
+                            {/* Place your ad component here */}
+                            <img src="your-ad-image-url" alt="Advertisement" />
+                        </div>
+                    )}
+                    <button onClick={handleShowMore1} className="btn-custom mx-auto text-center">Show More</button>
                 </ul>
 
             </div>
