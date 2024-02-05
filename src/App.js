@@ -6,7 +6,7 @@ import Website from './components/Website';
 const App = () => {
   
   return (
-    <div className="bg-white dark:bg-dark font-body">
+    <div className="bg-white dark:bg-dark font-body transition-all ease-in duration-500">
       <BrowserRouter>
         <Routes>
           <Route element={<Layout/>}>
