@@ -14,9 +14,21 @@ const App = () => {
     // Event listener to handle the load event
     window.addEventListener('load', handleLoad);
 
+    // Event listener to handle DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', handleLoad);
+
+    // Event listener to handle readystatechange event
+    document.onreadystatechange = function () {
+      if (document.readyState === "complete") {
+        handleLoad();
+      }
+    };
+
     return () => {
-      // Cleanup: Remove event listener when component unmounts
+      // Cleanup: Remove event listeners when component unmounts
       window.removeEventListener('load', handleLoad);
+      document.removeEventListener('DOMContentLoaded', handleLoad);
+      document.onreadystatechange = null;
     };
   }, []);
 
