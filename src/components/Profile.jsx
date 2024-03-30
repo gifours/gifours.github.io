@@ -44,7 +44,7 @@ const Banner = () => {
                             duration: 2,
                             type: "spring",
                         }}>
-                            <img src="./img/myfoto.png" alt="Taufiq Aditya" class="relative z-10 max-w-full mx-auto"/>
+                            <img src="./img/myfoto1.png" alt="Taufiq Aditya" class="relative z-10 max-w-full mx-auto"/>
                             <div class="absolute rounded-full w-60 h-60 bg-primary dark:bg-primary2 bottom-6 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out"></div>
                         </motion.div>
                         </div>
