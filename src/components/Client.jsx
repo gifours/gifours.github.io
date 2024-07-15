@@ -3,7 +3,7 @@ import dataclient from '../data/client.json';
 
 const Client = () => {
     return (
-        <section id="client" class="pt-36 pb-32 bg-slate-800 dark:bg-dark transition-all ease-in duration-500">
+        <section id="client" class="pt-24 pb-24 bg-slate-800 dark:bg-dark transition-all ease-in duration-500">
             <div class="container">
                 <div class="w-full px-4">
                     <div class="mx-auto text-center mb-16">

@@ -3,7 +3,7 @@ import datasertif from '../data/sertif.json'
 
 const Sertif = () => {
   return (
-    <section id="sertif" class="pt-36 pb-32 bg-slate-100 dark:bg-slate-800 transition-all ease-in duration-500">
+    <section id="sertif" class="pt-24 pb-24 bg-slate-100 dark:bg-slate-800 transition-all ease-in duration-500">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-full mx-auto text-center mb-16">

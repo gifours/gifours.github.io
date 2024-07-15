@@ -2,7 +2,7 @@
 npm start
 
 // merubah git remote add origin baru
-git remote set-url origin <url github baru>
+git remote set-url origin https://github.com/gifours/gifours.github.io.git
 
 // menambahkan gh-pages gitbub / setelah update koding ke github
 npm run deploy

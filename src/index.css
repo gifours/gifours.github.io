@@ -15,7 +15,7 @@
     @apply fixed z-[9999] bg-white bg-opacity-70 backdrop-blur-sm shadow-md dark:bg-dark dark:bg-opacity-70 ease-in transition-all duration-500;
   }
   .navmenu{
-    @apply scroll-smooth  text-base text-dark py-2 mx-8 group-hover:text-primary dark:text-white dark:group-hover:text-primary2 group-hover:duration-200 flex ease-in transition-all duration-500;
+    @apply scroll-smooth  text-base text-secondary py-2 mx-8 group-hover:text-primary dark:text-white dark:group-hover:text-primary2 group-hover:duration-200 flex ease-in transition-all duration-500;
   }
 
   /* darkmode */
@@ -42,8 +42,23 @@
 
   /* =================== start about =================== */
   .wrappertool {
-      @apply w-1/2 md:w-1/3 lg:w-1/4 py-5;
+      @apply w-1/2 md:w-1/3 lg:w-1/5 py-5;
   }
+
+  .wrappernewtool {
+      @apply w-1/5 md:w-[60px] lg:w-[60px] py-5;
+  }
+
+  .wrappernewtool .tooltiptext {
+    @apply invisible opacity-0 transition duration-500 rounded p-4 bg-white dark:bg-dark shadow-md dark:shadow-primary2;
+  }
+  .wrappernewtool:hover .tooltiptext {
+    @apply visible opacity-100 transition duration-500;
+  }
+
+  /* .wrappertexttool{
+    @apply p-4 text-sm rounded-lg;
+  } */
 
   .wrapperabout {
       @apply relative overflow-hidden lg:h-full m-2 px-4 py-6 bg-slate-100 dark:bg-slate-800 shadow-lg rounded-xl transition-all ease-in duration-500;
@@ -51,6 +66,10 @@
 
   .containertool{
       @apply container mx-auto flex p-2;
+  }
+
+  .containernewtool{
+      @apply container mx-auto flex p-2  hover:scale-75 transition ease-in-out duration-500;
   }
 
   .toolimage{
@@ -66,7 +85,7 @@
   }
 
   .tools-h3{
-      @apply font-semibold text-slate-800 dark:text-white transition-all ease-in duration-500;
+      @apply font-semibold text-slate-800 dark:text-white transition ease-in duration-500;
   }
 
   .sosmed-kontak {
