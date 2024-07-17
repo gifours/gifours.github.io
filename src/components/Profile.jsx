@@ -38,7 +38,7 @@ const Banner = () => {
             <div className="container">
                 <div className="flex flex-wrap">
                     <div className="w-full self-center px-4 lg:w-2/3">
-                        <motion.div className='w-full lg:w-2/3' initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants}>
+                    <motion.div className='w-full lg:w-2/3' initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.8 }} variants={cardVariants}>
                             <h1 className="text-base font-semibold text-primary dark:text-primary2 md:text-xl z-20">
                                 Halo Everyone, Saya
                                 <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white transition-all ease-in duration-500 z-20">
@@ -77,7 +77,7 @@ const Banner = () => {
                     
                     <div className="w-full self-end px-4 lg:w-1/3">
                         <div className="relative mt-10 lg:mt-9 lg:right-0">
-                            <motion.div className='w-full lg:w-2/3' initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
+                            <motion.div initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                                 <img src="./img/myfoto1.png" alt="Taufiq Aditya" className="relative z-10 max-w-full mx-auto" />
                                 <div className="absolute rounded-full w-60 h-60 bg-primary dark:bg-primary2 bottom-6 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out"></div>
                             </motion.div>
