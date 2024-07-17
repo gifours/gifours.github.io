@@ -340,7 +340,7 @@ const About = () => {
         <section id="about" class="pt-24 pb-24 dark:bg-dark transition-all ease-in duration-500">
             <div class="container">
                 <div class="flex flex-wrap">
-                    <motion.div className='w-full lg:w-2/3' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} variants={cardVariants}>
+                    <motion.div className='w-full lg:w-2/3' initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.8 }} variants={cardVariants}>
                         <div className="w-full" >
                             <div className="wrapperabout" >
                                 <h3 class="about-h3">Pengalaman</h3>
@@ -368,7 +368,7 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    <motion.div class="w-full lg:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} variants={cardVariants2}>
+                    <motion.div class="w-full lg:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.8 }} variants={cardVariants2}>
                         <div className="w-full">
                             <div className="wrapperabout">
                                 <h3 class="about-h3">Pendidikan</h3>
@@ -439,7 +439,7 @@ const About = () => {
                         </div>
                     </motion.div>
 
-                    <motion.div class="w-full px-4 mt-10" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} variants={cardVariants2}>
+                    <motion.div class="w-full px-4 mt-10" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.8 }} variants={cardVariants2}>
                         <h3 class="about-h3">Tools & Skills</h3>
                         <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Perangkat lunak dan keahlihan yang saya kuasain dengan keterampilan yang kuat dalam penggunaan.</p>
 

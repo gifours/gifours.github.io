@@ -1,10 +1,25 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 
 const Footer = () => {
+    const cardVariants2 = {
+        offscreen: {
+            opacity: 0,
+            y: 50,
+        },
+        onscreen: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                duration: 2, 
+            }
+        }
+    };
     return (
         <footer class="bg-dark pt-24 pb-12">
             <div class="container">
-                <div class="flex flex-wrap">
+                <motion.div class="flex flex-wrap"  initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                     <div class="w-full px-4 lg:mb-12 text-slate-300 font-medium md:w-1/3">
                         <div class="flex pb-5">
                             <img class="w-auto" src="img/gifourlogo.png" alt=""/>
@@ -53,7 +68,7 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div class="w-full pt-10 border-t border-slate-700">
                     <p class="font-medium text-[0.75rem] text-slate-500 text-center">Make by <span class="font-bold text-primary dark:text-primary2">GIFOUR Production</span>, with <span class="font-bold text-primary dark:text-primary2">React & Tailwind</span>.</p>

@@ -108,7 +108,7 @@ const Porto = () => {
         <section id="portofolio" class="pt-24 pb-24 bg-slate-100 dark:bg-slate-800 transition-all ease-in duration-500">
             <div class="container"> 
 
-                <motion.div class="w-full px-4" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.2 }} variants={cardVariants2}>
+                <motion.div class="w-full px-4" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                     <div>
                         <div class="max-w-full mx-auto text-center">
                             <h4 class="font-semibold text-lg text-primary dark:text-primary2 mb-2">Portofolio</h4>
@@ -139,16 +139,16 @@ const Porto = () => {
                 </motion.div>
                 
                 <ul class="w-full flex flex-wrap justify-start xl:w-10/12 xl:mx-auto">
-                    <motion.div className='w-full flex flex-wrap' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.2 }} variants={cardVariants2}>
+                    <div className='w-full flex flex-wrap'>
                         {/* <!-- frontend  --> */}
-                        <li class="w-full item_wrap pt-12 mb-4 frontend all">
+                        <motion.li class="w-full item_wrap pt-12 mb-4 frontend all" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <div class="max-w-full mx-auto text-center">
                                 <h4 class="porto-h4">Frond End Dev</h4>
                                 <div className="line"></div>
                             </div>
-                        </li>
+                        </motion.li>
                         {dataweb.slice(0, numImagesToShow2).map((card, i) => (
-                        <div key={i} className="md:w-1/2">
+                        <motion.div key={i} className="md:w-1/2" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <li class="w-full p-4 item_wrap frontend all">
                                 <div class="bg-white rounded-xl shadow-lg dark:bg-dark p-4 dark:hover:shadow-primary2 duration-500 transition-all ease-linear group">
                                     <img className="w-full drop-shadow-sm shadow-md group-hover:scale-105 ease-linear duration-200 rounded-md" src={card.imageweb} alt="home" />
@@ -174,7 +174,7 @@ const Porto = () => {
                                     </div>
                                 </div>
                             </li>
-                        </div>
+                        </motion.div>
                         ))}
                         <li class="w-full item_wrap mx-auto text-center frontend all" >
                             {showAds && (
@@ -187,18 +187,18 @@ const Porto = () => {
                                 <button onClick={handleShowMore2} className="btn-custom mx-auto text-center frontend all">Show More</button>
                             )}
                         </li>
-                    </motion.div>
+                    </div>
 
-                    <motion.div className='w-full flex flex-wrap' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.2 }} variants={cardVariants2}>
+                    <div className='w-full flex flex-wrap'>
                         {/* <!-- uiux  --> */}
-                        <li class="w-full item_wrap pt-12 mb-4 uiux all">
+                        <motion.li class="w-full item_wrap pt-12 mb-4 uiux all" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <div class="max-w-full mx-auto text-center">
                                 <h4 class="porto-h4">UI/UX Designer</h4>
                                 <div className="line"></div>
                             </div>
-                        </li>
+                        </motion.li>
                         {datauiux.map((card, i) => (
-                        <div key={i} className="md:w-1/3">
+                        <motion.div key={i} className="md:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <li class="w-full item_wrap p-4 uiux all">
                                 <img src={card.imageuiux} alt="" class="px-4 md:px-0 w-full drop-shadow-lg dark:hover:drop-shadow-[0_8px_5px_#F4D160] hover:scale-110 dark:decoration-purple-200 ease-linear transition-all duration-500 rounded-md"/>
                                 <div class="mb-2 pt-5 text-center">
@@ -206,24 +206,24 @@ const Porto = () => {
                                     <p class="paragraph">{card.deskripsiuiux}</p>
                                 </div>
                             </li>
-                        </div>
+                        </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
 
-                    <motion.div className='w-full flex flex-wrap' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.2 }} variants={cardVariants2}>
+                    <div className='w-full flex flex-wrap'>
                         {/* <!-- desain  --> */}
-                        <li class="w-full item_wrap pt-12 mb-4 desain all">
+                        <motion.li class="w-full item_wrap pt-12 mb-4 desain all" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <div class="max-w-full mx-auto text-center">
                                 <h4 class="porto-h4">Graphic Designer</h4>
                                 <div className="line"></div>
                             </div>
-                        </li>
+                        </motion.li>
                         {datadesain.slice(0, numImagesToShow).map((card, i) => (
-                            <div key={i} className="w-1/2 md:w-1/4">
+                            <motion.div key={i} className="w-1/2 md:w-1/4" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                                 <li className="item_wrap p-4 desain all">
                                     <img src={card.imagedesain} alt="" className="w-full shadow-md hover:scale-110 ease-linear duration-500 rounded-md dark:hover:shadow-primary2 dark:hover:shadow-lg" />
                                 </li>
-                            </div>
+                            </motion.div>
                         ))}
                         <li class="w-full item_wrap mx-auto text-center desain all">
                             {showAds && (
@@ -236,24 +236,24 @@ const Porto = () => {
                                 <button onClick={handleShowMore} className="btn-custom mx-auto text-center desain all">Show More</button>
                             )}
                         </li>
-                    </motion.div>
+                    </div>
                     
-                    <motion.div className='w-full flex flex-wrap' initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.2 }} variants={cardVariants2}>
+                    <div className='w-full flex flex-wrap'>
                         {/* <!-- blender  --> */}
-                        <li class="w-full item_wrap pt-12 mb-4 blender all">
+                        <motion.li class="w-full item_wrap pt-12 mb-4 blender all" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <div class="max-w-full mx-auto text-center">
                                 <h4 class="porto-h4">3D Modelling</h4>
                                 <div className="line"></div>
                             </div>
-                        </li>
+                        </motion.li>
                         {datablender.slice(0, numImagesToShow1).map((card, i) => (
-                            <div key={i} className="md:w-1/3">
+                            <motion.div key={i} className="md:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                                 <li class="w-full item_wrap p-4 blender all">
                                     <div class="rounded-lg shadow-md  overflow-hidden relative hover:scale-95 transition-all duration-500 dark:hover:shadow-primary2 dark:hover:shadow-lg ease-linear group">
                                         <img src={card.imageblender} alt="" class="h-full w-full group-hover:scale-150 group-hover:rotate-12 transition-all duration-300 ease-linear"/>
                                     </div>
                                 </li>  
-                            </div>
+                            </motion.div>
                         ))}
                         <li class="w-full item_wrap mx-auto text-center blender all">
                             {showAds && (
@@ -266,7 +266,7 @@ const Porto = () => {
                                 <button onClick={handleShowMore1} className="btn-custom mx-auto text-center ">Show More</button>
                             )}
                         </li>
-                    </motion.div>
+                    </div>
                 </ul>
 
             </div>

@@ -1,10 +1,25 @@
 import React from 'react'
 import dataclient from '../data/client.json';
+import { motion } from 'framer-motion';
 
 const Client = () => {
+    const cardVariants2 = {
+        offscreen: {
+            opacity: 0,
+            y: 50,
+        },
+        onscreen: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                duration: 2, 
+            }
+        }
+    };
     return (
         <section id="client" class="pt-24 pb-24 bg-slate-800 dark:bg-dark transition-all ease-in duration-500">
-            <div class="container">
+            <motion.div class="container" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                 <div class="w-full px-4">
                     <div class="mx-auto text-center mb-16">
                         <h4 class="font-semibold text-lg text-primary dark:text-primary2 mb-2">Clients</h4>
@@ -24,7 +39,7 @@ const Client = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };
